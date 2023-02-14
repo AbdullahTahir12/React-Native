@@ -1,0 +1,45 @@
+import React, { Component, useState } from 'react';  
+import { AppRegistry, ScrollView, Image, View ,FlatList, Text, Button, StyleSheet } from 'react-native';  
+export default function App() {
+const [fruit , setfruit] = useState([
+  { id:"1" , name: "ali" , email: "ali@gmail.com"},
+  {id:"2" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"3" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"4" , name: "ali" , email: "ali@gmail.com"},
+  {id:"5" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"6" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"7" , name: "ali" , email: "ali@gmail.com"},
+  {id:"8" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"9" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"10" , name: "ali" , email: "ali@gmail.com"},
+  {id:"11" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"12" ,name: "javed" , email: "javed@gmail.com"},
+])
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={ANIMALS} renderItem={({item})=>(
+          <View>
+            <Text style={styles.listItem}>{item.id}    {item.name}     {item.email}</Text>
+          </View>
+        )}
+      />
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    padding: 16,
+    paddingTop: 100,
+  },
+  listItem: {
+    backgroundColor: "skyblue",
+    borderWidth: 1,
+    color:'white',
+    borderColor: "#333",
+    padding: 25,
+  },
+});
