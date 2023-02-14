@@ -1,0 +1,61 @@
+import React, { Component, useState } from 'react';  
+import { AppRegistry, ScrollView, Image, View ,FlatList, Text, Button, StyleSheet } from 'react-native';  
+export default function App() {
+const [fruit , setfruit] = useState([
+  { id:"1" , name: "ali" , email: "ali@gmail.com"},
+  {id:"2" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"3" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"4" , name: "ali" , email: "ali@gmail.com"},
+  {id:"5" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"6" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"7" , name: "ali" , email: "ali@gmail.com"},
+  {id:"8" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"9" ,name: "javed" , email: "javed@gmail.com"},
+  { id:"10" , name: "ali" , email: "ali@gmail.com"},
+  {id:"11" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"12" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"13" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"14" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"15" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"16" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"17" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"18" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"19" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"20" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"21" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"22" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"23" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"24" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"25" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"26" ,name: "javed" , email: "javed@gmail.com"},
+])
+
+return(
+    <ScrollView style={styles.container}>
+      <FlatList horizontal data={fruit} renderItem={({item})=>(
+          <Text style={styles.listItem}>{item.name}</Text>
+      )}>
+      </FlatList>
+    </ScrollView>
+  )
+
+  }
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    padding: 16,
+    paddingTop: 100,
+  },
+  listItem: {
+    backgroundColor: "blue",
+    borderWidth: 2,
+    fontSize: 15,
+    color:'white',
+    borderColor: "red",
+    padding: 25,
+  },
+});
+
+// Note by default scroll view and flatlist has vertical scroll so it generate some warnings so to overcome that we use horizontal scroll to flatlist to solve this
+error
