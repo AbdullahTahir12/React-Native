@@ -14,6 +14,20 @@ const [fruit , setfruit] = useState([
   { id:"10" , name: "ali" , email: "ali@gmail.com"},
   {id:"11" ,name: "umer" , email: "umer@gmail.com"},
   {id:"12" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"13" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"14" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"15" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"16" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"17" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"18" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"19" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"20" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"21" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"22" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"23" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"24" ,name: "javed" , email: "javed@gmail.com"},
+  {id:"25" ,name: "umer" , email: "umer@gmail.com"},
+  {id:"26" ,name: "javed" , email: "javed@gmail.com"},
 ])
 
   return(
