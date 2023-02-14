@@ -1,58 +1,31 @@
-// scroll view horizontally
-export default class ScrolledViewExample extends Component {  
-  onPressButton() {  
-      alert('You clicked the button!')  
-  }  
-
-  render() {  
-      return (  
-          <ScrollView horizontal={true} style={styles.container}>  
-              <Text style={{fontSize:22, padding: 10}}>Horizontal ScrollView</Text>  
-                <View style={[{ width: 220,height: 70,padding: 10 }]}>  
-                    <Button  
-                        onPress={this.onPressButton}  
-                        title="Button 1"  
-                        color="#FF3D00"  
-                    />  
-                </View>  
-                <Text style={{fontSize:22, padding: 10}}>javatpoint</Text>  
-                <View style={[{ width: 220,height: 70,padding: 10 }]}>  
-                    <Button  
-                        onPress={this.onPressButton}  
-                        title="Button 2"  
-                        color="#3D00FF"  
-                    />  
-                </View>  
-                <Text style={{fontSize:22, padding: 10}}>React Native ScrollView Example</Text>  
-                <View style={[{ width: 220,height: 70,padding: 10 }]}>  
-                    <Button  
-                        onPress={this.onPressButton}  
-                        title="Button 3"  
-                        color="#FFFF3D"  
-                    />  
-                </View>  
-                <Text style={{fontSize:22, padding: 10}}>If you like</Text>  
-                <View style={[{ width: 220,height: 70,padding: 10 }]}>  
-                    <Button  
-                        onPress={this.onPressButton}  
-                        title="Button 4"  
-                        color="#FF3DFF"  
-                    />  
-                </View>  
-                <Text style={{fontSize:22, padding: 10}}>Scrolling horizontal</Text>  
-                <View style={[{ width: 220,height: 70,padding: 10 }]}>  
-                    <Button  
-                        onPress={this.onPressButton}  
-                        title="Button 5"  
-                        color="#3DFF00"  
-                    />  
-                </View>    
-          </ScrollView>  
-      );  
-  }  
-}  
-const styles = StyleSheet.create({  
-  container:{  
-      flex: 1,  
+import React, { Component, useState } from 'react';  
+import { AppRegistry, ScrollView, Image, View ,FlatList, Text, Button, StyleSheet } from 'react-native';  
+export default function App() {
+const data = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  return(
+    <View style={styles.container}>
+        <ScrollView>{data.map((item)=>(
+          <View>
+            <Text style={styles.listItem}>{item}</Text>
+          </View>
+        ))}    
+        </ScrollView>
+    </View>
+  )
+}
+const styles = StyleSheet.create({
+  container:{
+    width: '100%',
+    padding:16,
+    paddingTop:100,
   },
-})  
+  listItem:{
+    color:'black',
+    borderWidth : 10,
+    backgroundColor:'yellow',
+    borderColor:"red",
+    fontSize:20,
+    padding: 25,
+    border:'2'
+  }
+})
