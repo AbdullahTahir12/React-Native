@@ -1,0 +1,56 @@
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text, TouchableOpacity ,Button, StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignUp from './SignUp';
+
+function LoginScreen({navigation , route}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Login Screen</Text>
+      <TouchableOpacity style={styles.container}
+        onPress={() => navigation.navigate('SignUp' , {text: "hello abc"})}
+      >
+        <Text style={styles.txt}>Go to Home Screen</Text>
+      </TouchableOpacity>
+      
+    </View>
+  );
+} 
+function App() {
+const Stack = createNativeStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
+        <Stack.Screen name="Login" component={LoginScreen} 
+         options={{
+          // title: 'Home Title',
+          headerTitleStyle: {
+            color: 'white',
+          },
+          headerStyle: {
+            backgroundColor: 'black',
+          },
+        }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor:"black",
+    width:'50%',
+    alignItems: "center",
+    height:'10%',
+    padding:30,
+    paddingTop:30,
+  },
+  txt: {
+    color:'yellow',
+  },
+})
+export default App;
