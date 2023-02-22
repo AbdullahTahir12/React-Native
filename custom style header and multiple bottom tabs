@@ -1,0 +1,150 @@
+import React from "react";
+import { View, Text, TouchableOpacity, Button, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Profile from "./UserComponent/SignUp";
+import Login from "./UserComponent/Login";
+import User from "./UserComponent/User";
+import Auction from "./UserComponent/Auction";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+
+function Home() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text style={styles.par}>Home Screen</Text>
+    </View>
+  );
+}
+function App() {
+  const Tab = createBottomTabNavigator();
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarOptions: {
+            activeTintColor: "red",
+            inactiveTintColor: "blue",
+          },
+        }}
+      >
+        <Tab.Screen
+          name="Discover"
+          component={Home}
+          options={{
+            headerTitle: "Auction Screen",
+            headerTitleAlign:"center",
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitleStyle : {
+              color: 'white'
+            },
+            tabBarIcon: ({ focused, color, size }) => (
+              <FontAwesome
+                name="search"
+                size={size}
+                color={focused ? "red" : "blue"}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Auctions"
+          component={Auction}
+          options={{
+            headerTitle: "Auctions",
+            headerTitleAlign:"center",
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitleStyle : {
+              color: 'white'
+            },
+            tabBarIcon: ({ focused, color, size }) => (
+              <FontAwesome5
+                name="brush"
+                size={size}
+                color={focused ? "red" : "blue"}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Favorites"
+          component={Profile}
+          options={{
+            headerTitle: "Favorites",
+            headerTitleAlign:"center",
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitleStyle : {
+              color: 'white'
+            },
+            tabBarIcon: ({ focused, color, size }) => (
+              <FontAwesome
+                name="heart"
+                size={size}
+                color={focused ? "red" : "blue"}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="MyBids"
+          component={Login}
+          options={{
+            headerTitle: "My Bids ",
+            headerTitleAlign:"center",
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitleStyle : {
+              color: 'white'
+            },
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name="bulb"
+                size={size}
+                color={focused ? "red" : "blue"}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Me"
+          component={User}
+          options={{
+            headerTitle: "Me",
+            headerTitleAlign:"center",
+            headerStyle: {
+              backgroundColor: 'red',
+            },
+            headerTitleStyle : {
+              color: 'white',
+            },
+            tabBarIcon: ({ focused, color, size }) => (
+              <FontAwesome
+                name="user"
+                size={size}
+                color={focused ? "red" : "blue"}
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  par: {
+    backgroundColor: "blue",
+    color: "white",
+    fontSize: 20,
+  },
+});
+
+export default App;
