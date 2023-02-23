@@ -34,3 +34,62 @@ const styles = StyleSheet.create({
 })
 
 export default App;
+
+
+
+
+
+------------------------------- 2 -------------------------------------
+
+
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+
+function App() {
+  const [maxcount, setMax] = useState(0);
+  const [mincount, setMin] = useState(100);
+  return (
+    <View style={styles.count}>
+      <Text style={styles.container}>Max Count: {maxcount}</Text>
+      <Text style={styles.container}>Min Count: {mincount}</Text>
+      <View style={{ flexDirection:"row" , justifyContent: 'center'}}>
+        <TouchableOpacity onPress={() => setMax(maxcount + 1)}>
+          <Text style={styles.maxbutton}>Max</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setMin(mincount - 1)}>
+          <Text style={styles.minbutton}>Min</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  count: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 10,
+  },
+  container: {
+    padding: 10,
+    textAlign: "center",
+  },
+  maxbutton: {
+    alignItems: "center",
+    backgroundColor: "red",
+    color: "white",
+    textAlign: "center",
+    padding: 10,
+    width:70,
+  },
+  minbutton: {
+    alignItems: "center",
+    backgroundColor: "blue",
+    color: "white",
+    textAlign: "center",
+    width:70,
+    padding: 10,
+  },
+});
+
+export default App;
