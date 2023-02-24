@@ -1,0 +1,43 @@
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
+
+function App() {
+  const[status , setStatus] = useState(false);
+  return (
+    <View style={styles.container}>
+      {
+        status?
+        <Text style={styles.input}>hello abc</Text>
+        :null
+      }
+      <TouchableOpacity onPress={()=>setStatus(true)}>
+        <Text style={styles.button}>Show</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>setStatus(false)}>
+        <Text style={styles.button}>Hide</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    alignItems: "center",
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+  button: {
+    backgroundColor:'blue',
+    alignItems: "center",
+    color:'white',
+  }
+})
+
+export default App; 
