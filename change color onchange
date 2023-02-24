@@ -1,0 +1,33 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { TextInput } from 'react-native-web'
+
+export default function App() {
+  const[color , setcolor] = useState('');
+  return (
+    <View style={styles.container}>
+      <View style={{height:80 , width:80 , backgroundColor:color }}></View>
+      <TextInput style={styles.input} placeholder="enter color"  onChangeText={(e)=>setcolor(e)}></TextInput>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    alignItems: "center",
+  },
+  div: {
+    height:40,
+    width:40,
+    borderWidth:2,
+  },
+  input : {
+    borderWidth:2,
+    height: 40,
+    margin: 12,
+    padding: 10,
+  }
+})
